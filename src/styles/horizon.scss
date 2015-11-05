@@ -1,0 +1,259 @@
+$horizon-grey: #D2D2D2;
+$level1-radius: 150px;
+$text-color: #606060;
+
+body{
+	background: #EEEEEE;
+}
+
+.horizon-container{
+	background-color: #EEEEEE;
+	padding: 20px 10px;
+	width: 1024px;
+	height: 768px;
+	margin: 0px;
+	overflow: hidden;
+	position: relative;
+	font-size: 14px;
+}
+
+.first-level{
+	position: absolute;
+	border: 1px solid $horizon-grey;
+	padding: 3px;
+	width: $level1-radius * 2;
+	height: $level1-radius * 2;
+	border-radius: 50%;
+	margin-left: -1*$level1-radius;
+	margin-top: -1*$level1-radius;
+	opacity:0;
+	z-index: 5000;
+	animation-fill-mode: forwards !important;
+	animation: .5s first-ring-animation .8s;
+	.first-sub-item{
+		position: absolute;
+		left:50%;
+		top:50%;
+		.first-level-planet-group{
+			position: absolute;
+			left:$level1-radius;
+			transition: all .5s;
+			&:active{
+				transform: scale(.7);
+			}
+			.first-planet{
+				width: 60px;
+				height: 60px;
+				margin-left: -30px;
+				border-radius: 50%;
+				opacity:0;
+	      animation-fill-mode: forwards !important;
+			}
+			.first-planet.current{
+				transform: scale(1.5);
+			}
+			.first-text{
+				transform-origin: 0 0;
+				position: absolute;
+				font-size: 12px;
+				color:$text-color;
+				left: 35px;
+        top: 30px;
+				width: 90px;
+				animation-fill-mode: forwards !important;
+			}
+			.first-text.current{
+				font-weight: bold;
+			}
+		}
+
+		&:nth-child(1) .first-level-planet-group{
+			.first-planet{
+				animation: .5s first-planet-appear-animation 1s;
+			}
+			.first-text{
+				opacity:0;
+				animation: .5s first-planet-text-animation 1.5s;
+			}
+		}
+
+
+		&:nth-child(2) .first-level-planet-group{
+			.first-planet{
+				animation: .5s first-planet-appear-animation 1.3s;
+			}
+			.first-text{
+				opacity:0;
+				animation: .5s first-planet-text-animation 1.8s;
+			}
+		}
+
+		&:nth-child(3) .first-level-planet-group{
+			.first-planet{
+				animation: .5s first-planet-appear-animation 1.6s;
+			}
+			.first-text{
+				opacity:0;
+				animation: .5s first-planet-text-animation 2s;
+			}
+		}
+	}
+
+}
+
+.first-level-planet-group:hover{
+		transform: scale(1.1);
+
+}
+
+.sub-item-list-container{
+
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.sub-item-list{
+	position: absolute;
+	border: 1px solid $horizon-grey;
+	width: 600px; /* distance * 2*/
+	height: 600px; /* distance * 2*/
+	border-radius: 50%;
+	left: -300px; /* - distance  */
+	top: -300px; /* - distance  */
+	opacity: 0;
+	transition: .5s all;
+	transform: scale(.8);
+	&.show-item{
+		opacity:1;
+		transform: scale(1);
+
+	}
+
+	.sub-item-group{
+		position: absolute;
+		left: 300px; /* distance */
+		top: 300px; /* distance */
+		width:300px; /* distance */
+		transform-origin: 0 0;
+		&:hover{
+			.sub-item-planet{
+				transform: scale(1.6);
+			}
+			.sub-item-text .item-text{
+				transform: translateX(10px);
+			}
+
+		}
+		&:active{
+			.sub-item-planet{
+				transform: scale(.8);
+			}
+
+		}
+		.sub-item-rotation{
+			transform-origin: 0 0;
+			right:0;
+			width: 100%;
+			position: absolute;
+			// transform: rotate(30deg);
+			.sub-item-planet{
+				position: absolute;
+				right: -15px;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				transition: .6s all ;
+				// background-color: red;
+			}
+
+			.sub-item-text{
+				position: absolute;
+				right: 0px;
+				.item-text{
+					transition: .6s all ;
+					position: absolute;
+					left: 14px;
+					top:-6px;
+
+				}
+			}
+		}
+	}
+}
+
+.open-window{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1014px;
+	height: 758px;
+	border: solid 5px rgba(0,0,0,0.7);
+	transition: all ease .5s;
+	display: none;
+	z-index: 10001;
+}
+
+.close-window{
+	display: block;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	color: #FFF;
+	background: rgba(0,0,0,0.7);
+	margin: 0;
+	text-align: right;
+	color: #F60;
+}
+
+
+/****** animations *******/
+@keyframes first-ring-animation {
+    0%   { transform:  scale(.6);opacity:0;}
+
+    100% { transform: scale(1);opacity:1;}
+}
+
+@keyframes first-planet-appear-animation {
+    0%   { transform: translate(-60px, 0px) scale(.6);opacity:0;}
+    10%   { transform: translate(-60px, 0px)  scale(.6);opacity:0;}
+    100% { transform: translate(0px, 0px)  scale(1);opacity:1;}
+}
+
+@keyframes first-planet-text-animation {
+    0%   { opacity:0;margin-left: -10px;}
+    100% { opacity:1;margin-left: 0px;}
+}
+
+
+.sub-item-trans-enter {
+    transform:  rotate(-50deg);
+    opacity:0;
+	.item-text{
+		opacity:0;
+		transform: translateX(-30px);
+	}
+}
+
+.sub-item-trans-enter.sub-item-trans-enter-active {
+    transform:  rotate(0deg);
+    opacity:1;
+    transition: all 900ms ease-out .5s;
+}
+
+.sub-item-trans-leave {
+    transform: rotate(0deg);
+    opacity:1;
+
+}
+
+.sub-item-trans-leave.sub-item-trans-leave-active {
+    transform: rotate(90deg);
+    opacity:0;
+    transition: all 600ms ease-out .5s;
+	.item-text{
+		opacity:0;
+		transform: translateX(-30px);
+	}
+
+}
