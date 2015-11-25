@@ -33334,7 +33334,7 @@ exports['default'] = _react2['default'].createClass({
             _react2['default'].createElement(
                 'div',
                 { className: 'first-level-planet-group' },
-                _react2['default'].createElement('div', { className: 'first-planet', style: { 'backgroundColor': this.props.color }, onClick: this.handleClick }),
+                _react2['default'].createElement('div', { className: 'first-planet', style: { backgroundColor: this.props.color }, onClick: this.handleClick }),
                 _react2['default'].createElement(
                     'div',
                     { className: 'first-text', style: this.textStyle() },
@@ -33397,7 +33397,11 @@ exports['default'] = _react2['default'].createClass({
     getInitialState: function getInitialState() {
         return {
             selection: [],
+            selectedIndexPaths: [],
             color: "#FFFF00",
+            item1Color: "#16A556",
+            item2Color: "#D52548",
+            item3Color: "#158ACD",
             data: [{
                 type: "Macro-Economic Impact",
                 subItems: [{
@@ -33408,7 +33412,7 @@ exports['default'] = _react2['default'].createClass({
                             type: "AAAAAA",
                             subItems: [{
                                 type: "AAAAAA",
-                                finalDestination: 'URLGoodness'
+                                finalDestination: 'http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_01&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true'
                             }, {
                                 type: "BBBBBBBBB",
                                 finalDestination: 'URLGoodness'
@@ -33503,40 +33507,48 @@ exports['default'] = _react2['default'].createClass({
                         subItems: [{
                             type: "Increase in accuracy of customer data",
                             subItems: [{
-                                type: "Increased customer satisfaction from the improved accuracy of payments"
+                                type: "Increased customer satisfaction from the improved accuracy of payments",
+                                finalDestination: "http://www.google.com"
+                                // finalDestination:"http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_01&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }, {
-                                type: "Decrease in customer aggression"
+                                type: "Decrease in customer aggression",
+                                finalDestination: "http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_02&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }]
                         }, {
                             type: "Increase in ease of accessing services",
                             subItems: [{
-                                type: "Increase in customer satisfaction through incrreased ease of service access"
+                                type: "Increase in customer satisfaction through incrreased ease of service access",
+                                finalDestination: "http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_03&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }]
                         }, {
                             type: "Increase in overall satisfaction with service delivery",
                             subItems: [{
-                                type: "Overall Customer Satisfaction with DHS staff"
+                                type: "Overall Customer Satisfaction with DHS staff",
+                                finalDestination: "http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_04&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }]
                         }, {
                             type: "Increase in timeliness of service delivery",
                             subItems: [{
                                 type: "Increase in customer satisfaction due to improved timeliness of customer transactions",
-                                finalDestination: 'URLGoodness'
+                                finalDestination: "http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_05&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }, {
                                 type: "Increase in customer satisfaction due to a reduction in the time taken to complete transactions for processes requiring third party documents",
-                                finalDestination: 'URLGoodness'
+                                finalDestination: "http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_06&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }]
                         }, {
                             type: "Increase in transparency of services",
                             subItems: [{
-                                type: "Increase in customer satisfaction due to improved transparency in customer information via the digital interface, including summaries of general information, claims progress, notifications and automated messages"
+                                type: "Increase in customer satisfaction due to improved transparency in customer information via the digital interface, including summaries of general information, claims progress, notifications and automated messages",
+                                finalDestination: "http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_07&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }]
                         }, {
                             type: "Improvements in staff productivity",
                             subItems: [{
-                                type: "Decrease in absenteeism, promoting improvements in worker productivity, by eliminating repetitive tasks and being able to have a greater, more positive, impact on customers"
+                                type: "Decrease in absenteeism, promoting improvements in worker productivity, by eliminating repetitive tasks and being able to have a greater, more positive, impact on customers",
+                                finalDestination: "http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_08&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }, {
-                                type: "Increase in presenteeism, promoting improvements in worker productivity, by eliminating repetitive tasks and being able to have a greater, more positive, impact on customers"
+                                type: "Increase in presenteeism, promoting improvements in worker productivity, by eliminating repetitive tasks and being able to have a greater, more positive, impact on customers",
+                                finalDestination: "http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_09&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                             }]
                         }]
                     }, {
@@ -33597,17 +33609,17 @@ exports['default'] = _react2['default'].createClass({
                 _react2['default'].createElement(
                     'div',
                     { className: 'first-level' },
-                    _react2['default'].createElement(_FirstItemJsx2['default'], { rotation: '0', color: '#16A556', level: '1', data: this.state.data[0], onLevelSelect: this.setLevelData }),
-                    _react2['default'].createElement(_FirstItemJsx2['default'], { rotation: '30', color: '#D52548', level: '1', data: this.state.data[1], onLevelSelect: this.setLevelData }),
-                    _react2['default'].createElement(_FirstItemJsx2['default'], { rotation: '60', color: '#158ACD', level: '1', data: this.state.data[2], onLevelSelect: this.setLevelData })
+                    _react2['default'].createElement(_FirstItemJsx2['default'], { rotation: '0', color: this.state.item1Color, level: '1', data: this.state.data[0], onLevelSelect: this.setLevelData }),
+                    _react2['default'].createElement(_FirstItemJsx2['default'], { rotation: '30', color: this.state.item2Color, level: '1', data: this.state.data[1], onLevelSelect: this.setLevelData }),
+                    _react2['default'].createElement(_FirstItemJsx2['default'], { rotation: '60', color: this.state.item3Color, level: '1', data: this.state.data[2], onLevelSelect: this.setLevelData })
                 ),
                 _react2['default'].createElement(
                     'div',
                     { className: 'sub-item-list-container' },
-                    _react2['default'].createElement(_SubItemListJsx2['default'], { distance: '750', level: '5', color: this.state.color, data: this.state.selection, onLevelSelect: this.openWindow }),
-                    _react2['default'].createElement(_SubItemListJsx2['default'], { distance: '600', level: '4', color: this.state.color, data: this.state.selection, onLevelSelect: this.setLevelData }),
-                    _react2['default'].createElement(_SubItemListJsx2['default'], { distance: '450', level: '3', color: this.state.color, data: this.state.selection, onLevelSelect: this.setLevelData }),
-                    _react2['default'].createElement(_SubItemListJsx2['default'], { distance: '300', level: '2', color: this.state.color, data: this.state.selection, onLevelSelect: this.setLevelData })
+                    _react2['default'].createElement(_SubItemListJsx2['default'], { distance: '750', level: '5', color: this.state.color, data: this.state.selection, onLevelSelect: this.openWindow, indexPaths: this.state.selectedIndexPaths, selectIndexPath: this.selectedIndexPath }),
+                    _react2['default'].createElement(_SubItemListJsx2['default'], { distance: '600', level: '4', color: this.state.color, data: this.state.selection, onLevelSelect: this.setLevelData, indexPaths: this.state.selectedIndexPaths, selectIndexPath: this.selectedIndexPath }),
+                    _react2['default'].createElement(_SubItemListJsx2['default'], { distance: '450', level: '3', color: this.state.color, data: this.state.selection, onLevelSelect: this.setLevelData, indexPaths: this.state.selectedIndexPaths, selectIndexPath: this.selectedIndexPath }),
+                    _react2['default'].createElement(_SubItemListJsx2['default'], { distance: '300', level: '2', color: this.state.color, data: this.state.selection, onLevelSelect: this.setLevelData, indexPaths: this.state.selectedIndexPaths, selectIndexPath: this.selectedIndexPath })
                 )
             ),
             _react2['default'].createElement(_OpenWindowJsx2['default'], { show: this.state.show, onClick: this.handleChildClick })
@@ -33616,10 +33628,15 @@ exports['default'] = _react2['default'].createClass({
     setLevelData: function setLevelData(level, data, color) {
         if (color) {
             //sets the first level if it has got color param
-            this.setState({ selection: [data], color: color });
+            this.setState({
+                selection: [data],
+                color: color,
+                selectedIndexPaths: []
+            });
         } else {
             //sets the selected data based on the level
             var _selection = this.state.selection;
+            console.log(_selection);
             _selection[level] = data;
             //splice removes the data after the selected level [when user clicks on am item at parent level]
             _selection.splice(level + 1);
@@ -33628,11 +33645,28 @@ exports['default'] = _react2['default'].createClass({
         //navigation test
         //window.location = 'http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=Metric_Dashboard_151020&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true';
     },
-    openWindow: function openWindow() {
-        this.setState({ show: 'block' });
+    openWindow: function openWindow(level, data) {
+
+        var _selection = this.state.selection;
+        _selection[level] = data;
+        var _url = _selection[level].finalDestination;
+        //splice removes the data after the selected level [when user clicks on am item at parent level]
+        _selection.splice(level + 1);
+        this.setState({
+            selection: _selection,
+            url: _url,
+            show: 'block'
+        });
+        debugger;
     },
     handleChildClick: function handleChildClick(event) {
+        debugger;
         this.setState({ show: 'none' });
+    },
+    selectedIndexPath: function selectedIndexPath(level, index) {
+        this.state.selectedIndexPaths[level] = index;
+        this.state.selectedIndexPaths.splice(level + 1);
+        console.log(level, index, this.state.selectedIndexPaths);
     }
 });
 module.exports = exports['default'];
@@ -33668,11 +33702,13 @@ exports['default'] = _react2['default'].createClass({
       _react2['default'].createElement(
         'p',
         { className: 'close-window', onClick: this.props.onClick },
-        'CLOSE [X] '
+        'CLOSE [X] ',
+        this.state.url,
+        ' it should be here'
       ),
       _react2['default'].createElement(
         'iframe',
-        { frameborder: '0', scrolling: 'no', width: '1014', height: '728', src: 'https://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=Metric_Dashboard_151105&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true', name: 'imgbox', id: 'imgbox' },
+        { frameBorder: '0', scrolling: 'no', width: '1014', height: '728', src: this.state.url, name: 'imgbox', id: 'imgbox' },
         _react2['default'].createElement(
           'p',
           null,
@@ -33718,8 +33754,8 @@ exports['default'] = _reactAddons2['default'].createClass({
                     { className: 'sub-item-group', key: index + this.props.data[this.props.level - 2].type, style: this.getSubItemStyle() },
                     _reactAddons2['default'].createElement(
                         'div',
-                        { className: 'sub-item-rotation', onClick: this.selectNextLevel.bind(this, index), style: { transform: "rotate(" + (index + 1) * 12 + "deg)" } },
-                        _reactAddons2['default'].createElement('div', { className: 'sub-item-planet', style: { backgroundColor: this.props.color } }),
+                        { className: 'sub-item-rotation', style: { transform: "rotate(" + (index + 1) * 12 + "deg)" } },
+                        _reactAddons2['default'].createElement('div', { className: 'sub-item-planet', style: this.subPlanetStyle(index), onClick: this.selectNextLevel.bind(this, index) }),
                         _reactAddons2['default'].createElement(
                             'div',
                             { className: 'sub-item-text', style: { transform: "rotate(" + (index + 1) * -12 + "deg)" } },
@@ -33753,6 +33789,7 @@ exports['default'] = _reactAddons2['default'].createClass({
     },
     selectNextLevel: function selectNextLevel(index) {
         this.props.onLevelSelect(this.props.level - 1, this.props.data[this.props.level - 2].subItems[index]);
+        this.props.selectIndexPath(this.props.level - 2, index);
     },
     getRootStyle: function getRootStyle() {
         return {
@@ -33768,6 +33805,29 @@ exports['default'] = _reactAddons2['default'].createClass({
             left: this.props.distance + 'px',
             top: this.props.distance + 'px'
         };
+    },
+    subPlanetStyle: function subPlanetStyle(index) {
+        if (this.isSelected(index)) {
+            return {
+                backgroundColor: this.props.color,
+                border: '5px solid #D2D2D2'
+            };
+        } else {
+            return {
+                backgroundColor: this.props.color
+            };
+        }
+    },
+    isSelected: function isSelected(index) {
+        var selectedIndex = this.props.indexPaths[this.props.level - 2];
+        console.log(selectedIndex);
+        if (selectedIndex == index) {
+            console.log("is Selected");
+            return true;
+        } else {
+            console.log("not selected");
+            return false;
+        }
     }
 });
 module.exports = exports['default'];

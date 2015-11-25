@@ -188,7 +188,7 @@ body{
 	top: 0;
 	width: 1014px;
 	height: 758px;
-	border: solid 5px rgba(0,0,0,0.7);
+	border: solid 5px rgba(0,0,0,1);
 	transition: all ease .5s;
 	display: none;
 	z-index: 10001;
@@ -200,7 +200,7 @@ body{
 	height: 30px;
 	line-height: 30px;
 	color: #FFF;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,1);
 	margin: 0;
 	text-align: right;
 	color: #F60;
@@ -256,4 +256,8 @@ body{
 		transform: translateX(-30px);
 	}
 
+}
+
+.selected-planet {
+	border: 5px solid $horizon-grey;
 }

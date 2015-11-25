@@ -9,7 +9,7 @@ export default React.createClass({
         return (
             <div className="first-sub-item" style={this.groupStyle()}>
                 <div className="first-level-planet-group">
-                    <div className="first-planet" style={{'backgroundColor':this.props.color }} onClick={this.handleClick}></div>
+                    <div className="first-planet" style={{backgroundColor: this.props.color}} onClick={this.handleClick}></div>
                     <div className="first-text" style={this.textStyle()}>{this.props.data.type}</div>
                 </div>
             </div>
