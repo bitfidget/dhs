@@ -179,8 +179,7 @@ export default React.createClass({
                                             subItems:[
                                                 {
                                                     type:"Increased customer satisfaction from the improved accuracy of payments",
-                                                    finalDestination:"http://www.google.com"
-                                                    // finalDestination:"http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_01&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
+                                                    finalDestination:"http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_01&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
                                                 },
                                                 {
                                                     type:"Decrease in customer aggression",
@@ -237,7 +236,7 @@ export default React.createClass({
                                                 },
                                                 {
                                                     type:"Increase in presenteeism, promoting improvements in worker productivity, by eliminating repetitive tasks and being able to have a greater, more positive, impact on customers",
-                                                    finalDestination:"http://sasvapl1.csda.gov.au:7980/SASVisualAnalyticsViewer/VisualAnalyticsViewer.jsp?reportName=DHS_Draft_Dashboard_09&reportPath=/User+Folders/JIK868/My+Folder&reportViewOnly=true"
+                                                    finalDestination:"http://www.humanservices.gov.au/"
                                                 }
                                             ]
                                         }
@@ -327,7 +326,7 @@ export default React.createClass({
                         <SubItemList distance="300" level="2" color={this.state.color} data={this.state.selection} onLevelSelect={this.setLevelData} indexPaths={this.state.selectedIndexPaths} selectIndexPath={this.selectedIndexPath}></SubItemList>
                     </div>
                 </div>
-                <OpenWindow show={this.state.show} onClick={this.handleChildClick}></OpenWindow>
+                <OpenWindow show={this.state.show} linkname={this.state.linkname} onClick={this.handleChildClick}></OpenWindow>
             </div>
         );
     },
@@ -342,7 +341,6 @@ export default React.createClass({
         }else{
             //sets the selected data based on the level
             var _selection = this.state.selection;
-            console.log(_selection);
             _selection[level] = data;
             //splice removes the data after the selected level [when user clicks on am item at parent level]
             _selection.splice(level+1);
@@ -355,17 +353,16 @@ export default React.createClass({
         
         var _selection = this.state.selection;
         _selection[level] = data;
-        var _url = _selection[level].finalDestination;
+        var linkname = _selection[level].finalDestination;
         //splice removes the data after the selected level [when user clicks on am item at parent level]
         _selection.splice(level+1);
+
         this.setState(
             {
-                selection:_selection,
-                url:_url,
-                show:'block'
+                show: 'block',
+                linkname: linkname
             }
         );
-        debugger
     },
     handleChildClick: function(event) {
         debugger
@@ -375,5 +372,8 @@ export default React.createClass({
         this.state.selectedIndexPaths[level] = index;
         this.state.selectedIndexPaths.splice(level+1);
         console.log(level, index, this.state.selectedIndexPaths);
+    },
+    urlEcho: function(){
+        return this.state.url;
     }
 });

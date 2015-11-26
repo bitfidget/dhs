@@ -13,7 +13,7 @@ export default React.createClass({
                             <div className="sub-item-rotation" style={{transform:"rotate("+ (index+1)*12 +"deg)"}}>
                                 <div className="sub-item-planet" style={this.subPlanetStyle(index)} onClick={this.selectNextLevel.bind(this,index)}></div>
                                 <div className="sub-item-text" style={{transform:"rotate("+ (index+1)*-12 +"deg)"}}>
-                                    <p className="item-text" >{item.type}</p>
+                                    <p className="item-text">{item.type}</p>
                                 </div>
                             </div>
                         </div>);
